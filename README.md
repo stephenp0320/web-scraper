@@ -15,3 +15,6 @@ I have scraped the information needed, such as news title and description, using
 Turns out I don't need those trendlines; I was tripping.
 
 7:39 pm, I think I have completed this; it's very simple and there is definitely room for improvement, but it's done and I like it.
+
+<img width="1512" height="982" alt="Screenshot 2025-09-23 at 7 44 11 PM" src="https://github.com/user-attachments/assets/b89b4987-f213-4b4b-b7ff-c6b6eb08160c" />
+<img width="1512" height="982" alt="Screenshot 2025-09-23 at 7 46 57 PM" src="https://github.com/user-attachments/assets/38e58c76-1d06-4da9-a87a-f196349fc39c" />
