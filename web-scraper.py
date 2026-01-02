@@ -4,29 +4,27 @@ from bs4 import BeautifulSoup as bs
 
 def web_scraper():
     url = 'https://www.paymentsdive.com/'
-    res = requests.get(url)
+    res = requests.get(url, timeout = 10)
     soup = bs(res.text, 'html.parser')
     
     selector = "#main-content > section"
-
     lines = soup.select_one(selector)
 
-    res = lines.find_all("h3")
-    res2 = lines.find_all("p")
-    
+    articles = []
+    for article in lines.find_all("article")[:10]:
+        heading = article.find("h3")
+        description = article.find("p")
+        link = article.find("p")
 
-    n = min(len(res), len(res2))
-    for x in range(n):
-        print("Heading --> " + str.strip(res[x].text))
-        print("paragraph --> " + str.strip(res2[x].text))
-        print("")
+        if heading:
+            article.append({
+                "title": heading.text.strip(),
+                "desc": description.text.strip() if description else "No description",
+                "link": link['href'] if link else ""
+            })
+    return articles
 
 
-    with open("scraped_res.txt", "w") as f:
-        for x, y in zip(res, res2):
-            f.write(x.get_text(strip=True))
-            f.write(y.get_text(strip=True))
-    
 
 if __name__ == ('__main__'):
     web_scraper()
