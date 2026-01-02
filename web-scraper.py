@@ -4,8 +4,8 @@ from bs4 import BeautifulSoup as bs
 
 def web_scraper():
     url = 'https://www.paymentsdive.com/'
-    responce = requests.get(url)
-    soup = bs(responce.text, 'html.parser')
+    res = requests.get(url)
+    soup = bs(res.text, 'html.parser')
     
     selector = "#main-content > section"
 
